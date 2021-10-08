@@ -2,8 +2,8 @@
   "products": [
     {
       "id": 1,
-      "name": "Smartphone",
-      "price": 4300,
+      "name": "dfdfdfd",
+      "price": "Smartphone",
       "quantity": 600,
       "selected": false,
       "available": true

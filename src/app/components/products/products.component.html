@@ -7,7 +7,10 @@
       <button (click)="onGetSelectedProducts()" class="btn btn-outline-info m-lg-2"> Selected </button>
     </li>
     <li>
-      <button (click)="onGetAvailableProducts()" class="btn btn-outline-info"> Available </button>
+      <button (click)="onGetAvailableProducts()" class="btn btn-outline-info m-lg-2"> Available </button>
+    </li>
+    <li>
+      <button (click)="onAddProduct()" class="btn btn-outline-info"> New </button>
     </li>
   </ul>
 
@@ -54,6 +57,11 @@
            <td>
              <button class="btn btn-outline-danger" (click)="onDelete(p)">
                <span class="fa fa-trash-o"></span>
+             </button>
+           </td>
+           <td>
+             <button class="btn btn-outline-danger" (click)="onEdit(p)">
+               <span class="fa fa-pencil-square-o"></span>
              </button>
            </td>
          </tr>

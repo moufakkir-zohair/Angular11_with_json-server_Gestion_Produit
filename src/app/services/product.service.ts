@@ -42,4 +42,19 @@ export class ProductService{
     p.selected = !p.selected;
     return this.http.put<Product>(host + '/products/' + p.id, p);
   }
+
+  SaveProduct(p: Product):Observable<Product> {
+    let host = environment.host;
+    return this.http.post<Product>(host + '/products', p);
+  }
+
+  GetProduct(productId: number):Observable<Product> {
+    let host = environment.host;
+    return this.http.get<Product>(host + '/products/' + productId);
+  }
+
+  UpdateProduct(p: Product) {
+    let host = environment.host;
+    return this.http.put<Product>(host + '/products/' + p.id, p);
+  }
 }

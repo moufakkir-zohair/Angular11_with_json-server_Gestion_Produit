@@ -1,19 +1,11 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "dfdfdfd",
-      "price": "Smartphone",
-      "quantity": 600,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 2,
-      "name": "Computer",
-      "price": 4300,
-      "quantity": 600,
-      "selected": false,
+      "id": 5,
+      "name": "Computerccc",
+      "price": "Computer",
+      "quantity": "5",
+      "selected": true,
       "available": true
     }
   ]

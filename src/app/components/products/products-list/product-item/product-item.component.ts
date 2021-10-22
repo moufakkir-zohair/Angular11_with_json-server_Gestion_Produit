@@ -20,6 +20,7 @@ export class ProductItemComponent implements OnInit {
     this.productEventEmitter.emit({type: ProductActionsType.SELECT_PRODUCT , payload : product});
   }
 
+  
   onDelete(product: Product) {
     this.productEventEmitter.emit({type: ProductActionsType.DELETE_PRODUCT , payload : product});
   }

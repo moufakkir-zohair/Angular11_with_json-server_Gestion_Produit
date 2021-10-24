@@ -5,6 +5,7 @@ import {Observable, of} from "rxjs";
 import {ActionEvent, AppDataState, DataStateEnum, ProductActionsType} from "../../state/product.state";
 import {catchError, map, startWith} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {EventDriverService} from "../../services/event.driver.service";
 
 @Component({
   selector: 'app-products',
@@ -14,9 +15,12 @@ import {Router} from "@angular/router";
 export class ProductsComponent implements OnInit {
   products$: Observable<AppDataState<Product[]>>|null = null;
   readonly DataStateEnum = DataStateEnum;
-  constructor(private productService: ProductService , private router: Router) { }
+  constructor(private productService: ProductService , private eventDriverService: EventDriverService, private router: Router) { }
 
   ngOnInit(): void {
+    this.eventDriverService.sourceEventSubjectObservable.subscribe((actionEvent: ActionEvent) => {
+      this.onActionEvent(actionEvent);
+    });
   }
 
   // onGetAllProducts() {
@@ -89,7 +93,7 @@ export class ProductsComponent implements OnInit {
       case ProductActionsType.GET_AVAILABLE_PRODUCTS : this.onGetAvailableProducts() ; break;
       case ProductActionsType.SEARCH_PRODUCTS : this.onSearch($event.payload) ; break;
       case ProductActionsType.NEW_PRODUCT : this.onAddProduct() ; break;
-      case ProductActionsType.SELECT_PRODUCT : this.onSelect($event.payload) ; break ;
+      case ProductActionsType.SELECT_PRODUCT : this.onSelect($event.payload) ; console.log("ici") ; break ;
       case ProductActionsType.EDIT_PRODUCT : this.onEdit($event.payload) ; break ;
       case ProductActionsType.DELETE_PRODUCT : this.onDelete($event.payload); break ;
     }

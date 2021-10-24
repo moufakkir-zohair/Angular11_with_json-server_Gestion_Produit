@@ -1,12 +1,28 @@
 {
   "products": [
     {
-      "id": 5,
-      "name": "Computerccc",
-      "price": "Computer",
-      "quantity": "5",
+      "id": 1,
+      "name": "P1mmm",
+      "price": "P1",
+      "quantity": 0,
       "selected": true,
       "available": true
+    },
+    {
+      "id": 2,
+      "name": "hhhvvv",
+      "price": "hhh",
+      "quantity": 0,
+      "selected": false,
+      "available": true
+    },
+    {
+      "name": "fad",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 3
     }
   ]
 }
